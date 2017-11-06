@@ -1,0 +1,2 @@
+# LoactionBasedBiLSTM-CRF
+使用人工设定语言学特征及双向lstm+crf基于字颗粒的序列标注预测
