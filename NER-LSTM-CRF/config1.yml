@@ -1,0 +1,67 @@
+data_params:
+  path_result: ./data/sample_test_result.txt
+  path_test: ./data/testjingjiagong.txt
+  path_train: ./data/trainjingjiagong.txt
+  sep: table
+  voc_params:
+    f1: {min_count: 0, path: ./Res/voc/f1.voc.pkl}
+    f2: {min_count: 0, path: ./Res/voc/f2.voc.pkl}
+    f3: {min_count: 0, path: ./Res/voc/f3.voc.pkl}
+    f4: {min_count: 0, path: ./Res/voc/f4.voc.pkl}
+    f5: {min_count: 0, path: ./Res/voc/f5.voc.pkl}
+    f6: {min_count: 0, path: ./Res/voc/f6.voc.pkl}
+    f7: {min_count: 0, path: ./Res/voc/f7.voc.pkl}
+    label: {min_count: 0, path: ./Res/voc/label.voc.pkl}
+model: NER
+model_params:
+  batch_size: 64
+  bilstm_params: {num_layers: 1, num_units: 256}
+  clip: 10
+  dev_size: 0.1
+  dropout_rate: 0.5
+  embed_params:
+    f1:
+      dropout_rate: 0.3
+      path: ./Res/embed/char_embed.pkl
+      path_pre_train: ./data/embedding.txt
+      shape: [3166, 64]
+    f2:
+      dropout_rate: 0.3
+      path: null
+      path_pre_train: null
+      shape: [20577, 32]
+    f3:
+      dropout_rate: 0.3
+      path: null
+      path_pre_train: null
+      shape: [31, 32]
+    f4:
+      dropout_rate: 0.3
+      path: null
+      path_pre_train: null
+      shape: [3, 32]
+    f5:
+      dropout_rate: 0.3
+      path: null
+      path_pre_train: null
+      shape: [3, 32]
+    f6:
+      dropout_rate: 0.3
+      path: null
+      path_pre_train: null
+      shape: [3, 32]
+    f7:
+      dropout_rate: 0.3
+      path: null
+      path_pre_train: null
+      shape: [3, 32]
+  feature_names: [f1, f2, f3, f4, f5, f6, f7]
+  l2_rate: 0.01
+  learning_rate: 0.002
+  max_patience: 20
+  nb_classes: 5
+  nb_epoch: 20
+  path_model: ./Model/best_model
+  rnn_unit: lstm
+  sequence_length: 200
+  use_crf: true
